@@ -1,0 +1,40 @@
+{
+  "files": {
+    "/home/chu-totoro/Documents/Python/batEnv/batFramework/HalloweenGamejam/run.png": {
+      "width": 8,
+      "height": 16,
+      "ffl": [
+        4,
+        4,
+        7,
+        9,
+        4,
+        4,
+        7,
+        9
+      ]
+    },
+    "/home/chu-totoro/Documents/Python/batEnv/batFramework/gamejam/data/animation/baby/fall.png": {
+      "width": 8,
+      "height": 16,
+      "ffl": [
+        3,
+        10
+      ]
+    },
+    "/home/chu-totoro/Documents/Python/batEnv/batFramework/gamejam/data/animation/baby/run.png": {
+      "width": 8,
+      "height": 16,
+      "ffl": [
+        3,
+        3,
+        9,
+        5,
+        3,
+        6,
+        8,
+        6
+      ]
+    }
+  }
+}

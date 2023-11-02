@@ -6,11 +6,11 @@ class TitleScene(bf.Scene):
         super().__init__("title")
 
     def do_when_added(self):
-        layout = bf.Column(gap = 10,shrink=True)
+        layout = bf.Column(gap = 10,shrink=True).set_child_constraints(bf.ConstraintPercentageWidth(1))
         c = bf.Container(
             layout,
-            bf.Button("PLAY",lambda :self.manager.set_scene("game")),
-            bf.Button("QUIT")
+            bf.Button("PLAY",lambda :self.manager.set_scene("game")).set_autoresize(False),
+            bf.Button("QUIT",self.manager.stop).set_autoresize(False)
         ).add_constraint(bf.ConstraintCenter())
         self.root.add_child(c)
         d = bf.Debugger()
