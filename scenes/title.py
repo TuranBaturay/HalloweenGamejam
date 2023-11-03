@@ -1,5 +1,5 @@
 import batFramework as bf
-
+import pygame
 class TitleScene(bf.Scene):
 
     def __init__(self): 
@@ -10,6 +10,7 @@ class TitleScene(bf.Scene):
         c = bf.Container(
             layout,
             bf.Button("PLAY",lambda :self.manager.set_scene("game")).set_autoresize(False),
+            bf.Button("FULLSCREEN",pygame.display.toggle_fullscreen).set_autoresize(False),
             bf.Button("QUIT",self.manager.stop).set_autoresize(False)
         ).add_constraint(bf.ConstraintCenter())
         self.root.add_child(c)

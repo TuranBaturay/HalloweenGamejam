@@ -79,27 +79,26 @@ class MainScene(bf.Scene):
             bf.Action("save").add_key_control(pygame.K_s),
             bf.Action("left").add_key_control(pygame.K_LEFT),
             bf.Action("right").add_key_control(pygame.K_RIGHT),
+            bf.Action("print").add_key_control(pygame.K_p),
+            
         )
 
         # Sprite stuff
         self.sprite = bf.AnimatedSprite().set_center(*self.camera.get_center())
-
-
-        
         self.frame_length_list : list[int] = []
         self.animation_speed : float = 1
         self.paused :bool = False
 
-
         # Gui
         bottom_layout =bf.Column(gap=4,shrink=True).set_child_constraints(bf.ConstraintCenterX())
-
+        
         #Main container
         self.bottom_container = bf.Container(bottom_layout).add_constraints(bf.ConstraintAnchorBottom(),bf.ConstraintCenterX())
         
         self.indicators = bf.Container(bf.Row(gap = 10,shrink= True))
 
         self.pause_button = bf.Button("⏸",self.toggle_pause)
+
         self.save_button = bf.Button("💾",self.save_data)
         
         self.controls = bf.Container(bf.Row(gap=4,shrink=True))
@@ -255,5 +254,6 @@ class MainScene(bf.Scene):
         if self.actions.is_active("left"): self.previous_frame()        
         if self.actions.is_active("right"):
             self.next_frame()
+        if self.actions.is_active("print"): print(self.root.to_string())
 
 bf.Manager(MainScene()).run()
